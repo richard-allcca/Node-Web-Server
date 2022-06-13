@@ -10,19 +10,28 @@
 
 ## Description
 
-- Tres ejemplos de implementación de un web server
+Tres ejemplos de implementación de un web server
 
 1. Servidor simple con http-server de Node
+    - (se despliega con el siguiente comando)
+
+          node server-http
 
 2. Servidor con Handlebars
     - Tiene Jquery como parte de funcionalidad (pendiente de migrar a Js Vanilla)
     - Además tiene pendiente actualizar las clases de Bootstrap 4 a Bootstrap 5 (tiene fallas en styles)
     - En un proyecto actual el funcionamiento es correcto (por falta de tiempo no puedo corregir estos detalles)
+    - despliega con el comando:
+
+          node server-express-hbs
 
 3. Servidor de pagina estática (React,Angular...)
     - server-road
     - public-road
     - views-road
+    - despliega con el comando:
+
+          node server-react-angular
 
 ---
 
