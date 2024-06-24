@@ -11,7 +11,7 @@ app.use(express.static("public-express-static"));
 // ============================
 // Manejo de rutas ejemplo
 // ============================
-// si usamos app.use() no necesita esta ruta por defecto busca index
+// NOTE - si usamos app.use() no necesita este fragment, busca index por defecto
 // app.get('/', (req, res) => {
 //   res.sendFile(__dirname + '/public-express-static/index.html');
 // })

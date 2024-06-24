@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 
-require("dotenv").config(); //variable de entorno
+require("dotenv").config();
 // require("./hbs/helpers");
 
 const port = process.env.PORT || 8082;
