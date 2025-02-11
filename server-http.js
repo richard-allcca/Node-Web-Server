@@ -2,7 +2,7 @@ const http = require("http");
 
 // puedes crear el http.createServer().listen() sin asignarlo a una variable
 const app = http.createServer((req, res) => {
-  // console.log(req.headers);// muestra los headers de la peticion
+  // console.log(req.headers);// muestra los headers de la petición
 
   /**
    * Ejemplos de Content-Type
@@ -18,10 +18,10 @@ const app = http.createServer((req, res) => {
    * image/png
    * image/gif
    * image/svg+xml
-   * 
+   *
    */
 
-  //? Ejemplo application/csv, archivo delimitasdo por comas (necesita el setHeader)
+  //? Ejemplo application/csv, archivo delimitado por comas (necesita el setHeader)
   // res.setHeader("Content-Disposition", 'attachment; filename="lista.csv"');
   // res.writeHead(200, { "Content-Type": "application/csv" });
   //? contenido del archivo

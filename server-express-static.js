@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 // ============================
-// inyeccion de html contenido static
+// Inyección de html contenido static
 // ============================
 app.use(express.static("public-express-static"));
 
