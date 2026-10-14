@@ -1,71 +1,41 @@
-# Web Server
+# Node Web Server
 
----
+Colección didáctica de servidores alternativos con Node.js y Express. Cada variante se ejecuta por separado.
 
-👋 Hello, I'm Thouma.
+## Requisitos
 
-- [LinkedIn](https://www.linkedin.com/in/richard-allcca-llano/)
+- Node.js 22 o posterior
+- npm
 
----
+Instala las dependencias con:
 
-## Description
+```sh
+npm install
+```
 
-Tres ejemplos de implementación de un web server
+## Variantes
 
-1. Servidor simple con http-server de Node
-    - (se despliega con el siguiente comando)
+| Comando | Servidor | Puerto predeterminado |
+| --- | --- | --- |
+| `npm start` o `npm run start:react` | Express sirve la compilación estática de React | `8080` |
+| `npm run start:http` | HTTP nativo, devuelve JSON | `8080` |
+| `npm run start:hbs` | Express con Handlebars | `8080` |
+| `npm run start:static` | Express sirve las páginas HTML estáticas | `8080` |
+| `npm run start:app` | Ejemplo alternativo de Express con Handlebars | `8082` |
 
-          node server-http
+Todos los servidores leen `PORT` del entorno o de un archivo `.env`. Como comparten el puerto predeterminado, ejecuta una variante a la vez, o asigna puertos distintos.
 
-2. Servidor con Handlebars
-    - Tiene Jquery como parte de funcionalidad (pendiente de migrar a Js Vanilla)
-    - Además tiene pendiente actualizar las clases de Bootstrap 4 a Bootstrap 5 (tiene fallas en styles)
-    - En un proyecto actual el funcionamiento es correcto (por falta de tiempo no puedo corregir estos detalles)
-    - despliega con el comando:
+El proyecto incluye el build de React, pero no el código fuente ni un comando para reconstruirlo.
 
-          node server-express-hbs
+## Pruebas
 
-3. Servidor de pagina estática (React,Angular...)
-    - server-road
-    - public-road
-    - views-road
-    - despliega con el comando:
+```sh
+npm test
+```
 
-          node server-react-angular
+Las pruebas usan `node:test`, asignan puertos disponibles y arrancan los servidores desde un directorio ajeno al proyecto para comprobar rutas, respuestas HTTP y recursos.
 
----
-
-## Detalles para subirlo a un hosting
-
-- crear un archivo ".env"
-- instalar "dotenv"
-- establecer variables de entorno
-- crear un script en "package.json"
-
-      "start": "node app.js"
-
----
-
-## Dependencies
-
-    npm install express
-    npm install dotenv
-    npm install hbs
-
----
-
-## Enlaces
+## Referencias
 
 - [Handlebars](https://handlebarsjs.com/)
-- [Uso hbs](https://github.com/pillarjs/hbs)
-
----
-
-## Extensiones  que Utilizo
-
-- 🔗 [ES7 React JS Snippets Extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-- 🔗 [Prettier VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- 🔗 [vscode-icons VS Code Extension](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
-- 🔗 [Github Themes VS Code Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
-
----
+- [hbs](https://github.com/pillarjs/hbs)

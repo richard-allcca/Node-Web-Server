@@ -1,11 +1,14 @@
 const express = require("express");
+const path = require("path");
+require("dotenv").config();
 
 const app = express();
+const port = process.env.PORT || 8080;
 
 // ============================
 // Inyección de html contenido static
 // ============================
-app.use(express.static("public-express-static"));
+app.use(express.static(path.join(__dirname, "public-express-static")));
 
 
 // ============================
@@ -27,10 +30,7 @@ app.get('/elements', (req, res) => {
 })
 
 app.get("*", (req, res) => {
-  res.sendFile(__dirname + "/public/404.html");
+  res.status(404).sendFile(path.join(__dirname, "public/404.html"));
 });
 
-
-const newLocal = 8080;
-
-app.listen(newLocal, () => console.log(`Servidor en Puerto ${newLocal}`));
+app.listen(port, () => console.log(`Servidor en Puerto ${port}`));

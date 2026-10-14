@@ -1,4 +1,7 @@
 const http = require("http");
+require("dotenv").config();
+
+const port = process.env.PORT || 8080;
 
 // puedes crear el http.createServer().listen() sin asignarlo a una variable
 const app = http.createServer((req, res) => {
@@ -32,7 +35,7 @@ const app = http.createServer((req, res) => {
   // res.write("4, pedro\n");
 
 
-  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
 
   let salida = {
     nombre: "richard",
@@ -45,6 +48,6 @@ const app = http.createServer((req, res) => {
   res.end();
 });
 
-app.listen(8080);
+app.listen(port);
 
-console.log("escuchando el puerto 8080");
+console.log(`escuchando el puerto ${port}`);

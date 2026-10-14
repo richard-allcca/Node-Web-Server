@@ -4,14 +4,23 @@
   "description": "\"web server\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server-react-angular.js"
+    "test": "node --test",
+    "start": "npm run start:react",
+    "start:http": "node server-http.js",
+    "start:hbs": "node server-express-hbs.js",
+    "start:static": "node server-express-static.js",
+    "start:react": "node server-react-angular.js",
+    "start:app": "node app.js"
   },
   "author": "\"richard_allcca_llano@hotmail.com\"",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "hbs": "^4.2.0"
+    "express": "^4.22.3",
+    "hbs": "^4.3.1"
+  },
+  "overrides": {
+    "handlebars": "^4.7.10",
+    "proxy-addr": "^2.0.8"
   }
 }

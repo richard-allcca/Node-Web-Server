@@ -1,18 +1,21 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const hbs = require("hbs");
+require("dotenv").config();
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 // Configura express para que use hbs pueda renderizar las páginas
 app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views"));
 // __dirname, variable global que contiene el path del directorio actual
-hbs.registerPartials(__dirname + "/views/partials", function (err) {
-  console.log(err)
+hbs.registerPartials(path.join(__dirname, "views/partials"), function (err) {
+  if (err) throw err;
 });
 
 // Inyección de html contenido static
-app.use(express.static("public-express-hbs"));
+app.use(express.static(path.join(__dirname, "public-express-hbs")));
 
 /**
  * Ruta para la página principal
@@ -38,7 +41,7 @@ app.get("/elements", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.render("404");
+  res.status(404).render("404");
 });
 
 

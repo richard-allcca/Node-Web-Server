@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 // config variables de entorno
@@ -12,7 +13,7 @@ const port = process.env.PORT || 8080;
  */
 
 // archivos estaticos
-app.use(express.static(__dirname + "/public-react-angular"));
+app.use(express.static(path.join(__dirname, "public-react-angular")));
 
 
 

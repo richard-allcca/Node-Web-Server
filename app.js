@@ -1,6 +1,8 @@
 // ! este archivo solo es de prueba si necesitas renderizar algo usa los server-
 const express = require("express");
+const path = require("path");
 const app = express();
+const hbs = require("hbs");
 
 require("dotenv").config();
 // require("./hbs/helpers");
@@ -8,17 +10,18 @@ require("dotenv").config();
 const port = process.env.PORT || 8082;
 
 app.set("view engine", "hbs");
-// hbs.registerPartials(__dirname + "/views/parciales");
+app.set("views", path.join(__dirname, "views"));
+hbs.registerPartials(path.join(__dirname, "views/partials"));
 
-app.use(express.static(__dirname + "/public-handlebars"));
+app.use(express.static(path.join(__dirname, "public-express-hbs")));
 
 // ============================
 // rutas
 // ============================
 app.get("/", (req, res) => {
   res.render("home", {
-    nombre: "Richard",
-    titulo: "Curso node",
+    title: "Curso Node",
+    message: "Servidor Express HBS",
   });
 });
 
